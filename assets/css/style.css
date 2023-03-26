@@ -1,0 +1,501 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+    font-size: 15px;
+    line-height: 1.6;
+    color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Container */
+
+.container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.title {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    font-size: 30px;
+}
+
+/* Intro */
+
+.intro {
+    width: 100%;
+    height: 760px;
+}
+
+/* We are clemo */
+
+.werclemo {
+    margin: 0;
+    height: 520px;
+    width: auto;
+    
+    background-color: #ffe1bd;
+}
+
+.werclemo__h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 48px;
+    padding-top: 120px;
+    
+}
+
+.line {
+    margin-top: 10px;
+    border: none;
+    height: 2px;
+    width: 55px;
+    background-color: #000;
+}
+
+.werclemo__p {
+    margin-top: 20px;
+    font-style: 300;
+    font-size: 24px;
+    text-align: center;
+}
+
+.button {
+    margin: auto;
+    height: 50px;
+    width: 170px;
+    background-color: #000;
+    border-radius: 30px;
+    margin-top: 50px; 
+    border: solid 1px black; 
+    
+    transition: all .2s;
+}
+
+.btext {
+    line-height: 48px;  
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    
+    transition: color .4s;
+}
+
+.button:hover {
+    background-color: #fff;
+    transform: scale(1.125);
+}
+
+.button:hover .btext {
+    color: #000;
+}
+
+.scrollers {
+    margin-top: -186px;
+    margin-left: 96%;
+}
+
+.scroller {
+    cursor: pointer;
+    
+    margin-top: 20px;
+    
+    width: 15px;
+    height: 15px;
+    border: solid 1px black;
+    border-radius: 50%;
+    
+    transition: background-color 0.2s;
+}
+
+.scroller:first-child {
+    margin: 0;
+}
+
+.scroller:hover {
+    background-color: #000;
+}
+
+/* What we do */
+
+.wwedo {
+    display: flex;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.wwedo__title {
+    margin-top: -20px;
+    
+    font-size: 60px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.wwedo__img {
+    margin-top: 70px;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.wwedo__info {
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.wwedo__supheader {
+    line-height: 0.5;
+    margin: 0;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.wwedo__header {
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.lineleft {
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.wwedo__text {
+    margin-top: 30px;
+    
+    font-weight: 300;
+    font-size: 18px;
+    
+    color: #777777;
+}
+
+.wwedo__button {
+    margin-left: 0;
+    margin-top: 40px;
+    
+    height: 50px;
+    width: 170px;
+    background-color: #fff;
+    border-radius: 30px; 
+    border: solid 1px #d8d8d8;
+    
+    transition: background-color 0.2s;
+}
+
+.wwedo_b_text {
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    
+    color: #000;
+    
+    transition: color 0.2s;
+    
+}
+
+.wwedo__button:hover {
+    background-color: #000;
+}
+
+.wwedo__button:hover .wwedo_b_text {
+    color: #fff;
+}
+
+.mirrored {
+    margin-left: 0px;
+    margin-right: 100px;
+}
+
+/* Best work */
+
+.bestwork {
+    display: block;
+    column-count: 3;
+    
+    width: 100%;
+    min-width: 1142px;
+    height: 1018px;
+    margin-top: 75px;
+}
+
+.bestwork__title {
+    margin-top: 60px;
+    
+    font-size: 60px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.bestwork__img {
+    margin-right: 25px;
+    margin-bottom: 25px;
+    
+    
+    transition: all .5s ;
+}
+
+.bestwork__img:hover {
+    transform: scale(1.05);
+}
+
+.r {
+    margin-right: 0;
+}
+
+.bestwork__button {
+    margin: auto;
+    margin-top: 30px;
+    
+    
+    height: 50px;
+    width: 170px;
+    background-color: #000;
+    border-radius: 30px; 
+    border: solid 1px #000;
+    
+    transition: all 0.2s;
+}
+
+.bestwork_b_text {
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    
+    color: #fff;
+    
+    transition: color 0.2s;
+}
+
+.bestwork__button:hover {
+    background-color: #fff;
+}
+
+.bestwork_b_text:hover {
+    color: #000;
+}
+
+/*Best team*/
+
+.bestteam {
+    margin-top: 60px;
+    min-width: 1150px;
+}
+
+
+.bestteam__title {
+    font-size: 45px;
+    font-weight: 100;
+    text-align: center;
+    
+    padding-top: 45px;
+}
+
+.bestteam__slider {
+    height: 403px;
+    width: 100%;
+    
+    padding-top: 45px;
+    position: relative;
+}
+
+.bestteam__sliderContent {
+    display: flex;
+    justify-content: space-between;
+    column-count: 3;
+    
+    width: 750px;
+    height: 315px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bestteam__item {
+    width: 100%;
+    
+    transition: all .3s;
+}
+
+.bestteam__item:hover {
+    transform: scale(1.2);
+}
+
+.bestteam__item__img {
+    border-radius: 50%;
+    
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.bestteam__name {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 30px;
+    
+    text-align: center;
+}
+
+.bestteam__info {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 10px;
+    
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+    
+    height: 30px;
+    width: 30px;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    
+    position: absolute;
+    top: 40%;
+    
+    transition: all .2s;
+}
+
+.pointer:hover {
+    border-color: #fff;
+}
+
+.p_l {
+    transform: rotate(-45deg);
+    
+    left: 15%;
+}
+
+.p_r {
+    transform: rotate(135deg);
+    
+    left: 82.5%;
+    
+}
+
+.bestteam__scrollers {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 8px;
+}
+
+.bestteam__scroller {
+    float: left;
+    cursor: pointer;
+    
+    margin-left: 20px;
+    
+    width: 15px;
+    height: 15px;
+    border: solid 1px black;
+    border-radius: 50%;
+    
+    transition: background-color 0.2s;
+}
+
+.bestteam__scroller:first-child {
+    margin-left: 0;
+}
+
+.bestteam__scroller:hover {
+    background-color: #000;
+}
+
+/*Clinets*/
+
+.clients__title {
+    font-size: 45px;
+    font-weight: 100;
+    text-align: center;
+    
+    padding-top: 45px;
+}
+
+.clients {
+    height: 465px;
+    width: 100%;
+    min-width: 900px;
+    
+    padding-top: 45px;
+}
+
+.clients__card {
+    display: flex;
+    justify-content: end;
+    
+    margin: 0 auto;
+}
+
+.clients__preview {
+    
+    margin-right: 65px;
+}
+
+.clients__info {
+    width: 50%;
+    padding-left: 10px;
+}
+
+.clients__info__text {
+    width: 75%;
+    margin: 0;
+}
+
+.client__name {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 30px;
+    
+    text-align: center;
+}
+
+.client__job {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 10px;
+    
+    text-align: right;
+}
+
+.client__line {
+    margin-right: 0;
+}
+
+.clients__photos {
+    margin-top: 75px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.client__photos__item {
+    cursor: pointer;
+    
+    transition: all .3s;
+}
+
+.client__photos__item:hover {
+    transform: scale(1.1);
+}
+
+.clients__scrollers {
+    margin-top: 50px;
+}
