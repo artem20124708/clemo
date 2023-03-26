@@ -228,9 +228,7 @@ h1, h2, h3, h4, h5, h6 {
     display: table-cell;
     column-count: 3;
     
-    width: 100%;
-    min-width: 1142px;
-    max-width: 1150px;
+    width: 1150px;
     height: 1018px;
     padding-top: 75px;
 }
