@@ -311,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 403px;
     width: 100%;
     
-    padding-top: 45px;
+    padding-top: 30px;
     position: relative;
 }
 
@@ -430,7 +430,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clients {
-    height: 465px;
+    height: 445px;
     width: 100%;
     min-width: 900px;
     
@@ -498,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clients__scrollers {
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 /*Footer*/
@@ -509,7 +509,7 @@ h1, h2, h3, h4, h5, h6 {
     
     background-color: #000;
     
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .footer__title {
