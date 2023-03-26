@@ -225,13 +225,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Best work */
 
 .bestwork {
-    display: block;
+    display: table-cell;
     column-count: 3;
     
     width: 100%;
     min-width: 1142px;
     height: 1018px;
-    margin-top: 75px;
+    padding-top: 75px;
 }
 
 .bestwork__title {
