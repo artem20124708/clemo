@@ -300,11 +300,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .bestteam__title {
-    font-size: 45px;
+    font-size: 60px;
     font-weight: 100;
     text-align: center;
     
-    padding-top: 45px;
+    padding-top: 25px;
 }
 
 .bestteam__slider {
@@ -422,7 +422,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Clinets*/
 
 .clients__title {
-    font-size: 45px;
+    font-size: 60px;
     font-weight: 100;
     text-align: center;
     
@@ -498,5 +498,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clients__scrollers {
-    margin-top: 50px;
+    margin-top: 80px;
+}
+
+/*Footer*/
+
+.footer {
+    height: 700px;
+    width: 100%;
+    
+    background-color: #000;
+    
+    margin-top: 100px;
+}
+
+.footer__title {
+    font-size: 60px;
+    font-weight: 100;
+    color: #FFF;
+    
+    text-align: center;
+    
+    padding: 70px;
+}
+
+.footer__content {
+    width: 1050px;
+    
+    display: flex;
+}
+
+.contacts__item {
+    display: flex;
+    align-items: center;
+    justify-items: 
+}
+
+.contacts__info {
+    color: #FFF;
+    margin-left: 20px;
+}
+
+.contacts__socialMedia {
+    display: flex;
+}
+
+.contacts__socialMedia_item {
+    width: 40px;
+    height: 40px;
+    background-color: #FFF;
+    
+    border-radius: 50%;
+    
+    margin-left: 20px;
+}
+
+.contacts__socialMedia_item:first-child {
+    margin-left: 0;
+}
+
+.socialMedia__item_logo {
+    margin-left: 50%;
+    margin-top: 50%;
+    
+    transform: translate(-50%, -50%);
 }
