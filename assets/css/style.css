@@ -127,6 +127,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.2s;
 }
 
+.scroller_active {
+    background-color: #000;
+}
+
 .scroller:first-child {
     margin: 0;
 }
@@ -335,6 +339,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
 }
 
+.bestteam__slider_hidden {
+    display: none;
+}
+
 .bestteam__item {
     width: 100%;
     
@@ -353,6 +361,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bestteam__name {
+    cursor: default;
+
     font-size: 30px;
     font-weight: 900;
     line-height: 30px;
@@ -418,6 +428,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     
     transition: background-color 0.2s;
+}
+
+.bestteam__scroller_active {
+    background-color: #000;
 }
 
 .bestteam__scroller:first-child {
