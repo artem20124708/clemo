@@ -23,24 +23,44 @@ document.querySelector('#scrollToClients').addEventListener('click', function() 
     introScroller(this, document.querySelector('#clientsSay'))
 })
 
-// Clients
+// Bestteam slider
 
-function clientsScroller(focusedScroller, scrollElem) {
-    document.querySelector('.clients__scroller_active').classList.remove("clients__scroller_active")
-    focusedScroller.classList.add("clients__scroller_active")
-    document.querySelector('.card_active').classList.remove("card_active")
-    scrollElem.classList.add("card_active")
-}
+let pushedChecker = 1
+let pushPx = -744
+let scrollerActive = 1
 
-document.querySelectorAll('.firstClient').addEventListener('click', function(){
-    clientsScroller(this, document.querySelector('#clientOne'))
+document.querySelector('.p_r').addEventListener('click', function() {
+    if (pushedChecker < 2) {
+        pushPx -= 744
+        document.querySelector('#f_slide').style.left = `${pushPx}px`
+        document.querySelector('#s_slide').style.left = `${pushPx}px`
+        document.querySelector('#t_slide').style.left = `${pushPx}px`
+        document.querySelectorAll('.bestteam__scroller')[scrollerActive].style.backgroundColor = 'transparent'
+        document.querySelectorAll('.bestteam__scroller')[scrollerActive + 1].style.backgroundColor = '#000'
+        scrollerActive += 1
+        pushedChecker += 1
+        document.querySelector('.p_l').style.borderColor = '#000'
+        if (pushedChecker == 2) {
+            document.querySelector('.p_r').style.borderColor = '#FFF'
+        }
+    }
+    console.log(pushedChecker)
 })
-document.querySelectorAll('.secondClient').addEventListener('click', function(){
-    clientsScroller(this, document.querySelector('#clientTwo'))
-})
-document.querySelectorAll('.thirdClient').addEventListener('click', function(){
-    clientsScroller(this, document.querySelector('#clientThree'))
-})
-document.querySelectorAll('.fourthClient').addEventListener('click', function(){
-    clientsScroller(this, document.querySelector('#clientFour'))
+
+document.querySelector('.p_l').addEventListener('click', function() {
+    if (pushedChecker > 0) {
+        pushPx += 744
+        document.querySelector('#f_slide').style.left = `${pushPx}px`
+        document.querySelector('#s_slide').style.left = `${pushPx}px`
+        document.querySelector('#t_slide').style.left = `${pushPx}px`
+        document.querySelectorAll('.bestteam__scroller')[scrollerActive].style.backgroundColor = 'transparent'
+        document.querySelectorAll('.bestteam__scroller')[scrollerActive - 1].style.backgroundColor = '#000'
+        scrollerActive -= 1
+        pushedChecker -= 1
+        document.querySelector('.p_r').style.borderColor = '#000'
+        if (pushedChecker == 0) {
+            document.querySelector('.p_l').style.borderColor = '#FFF'
+        }
+    }
+    console.log(pushedChecker)
 })
