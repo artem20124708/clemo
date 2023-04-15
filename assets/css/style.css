@@ -334,6 +334,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     column-count: 3;
+    gap: 0 160px;
     
     height: 415px;
     margin-left: auto;
@@ -343,7 +344,7 @@ h1, h2, h3, h4, h5, h6 {
 .wrapper {
     overflow: hidden;
     position: relative;
-    width: 750px;
+    width: 1000px;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -352,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     position: relative;
     top: 15%;
-    left: -744px;
+    left: -774px;
     
     transition: all .5s;
 }
@@ -410,6 +411,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: all .2s;
 }
 
+.pointer_blocked {
+    border-color: #FFF;
+}
+
 .pointer:hover {
     border-color: #fff;
 }
@@ -448,7 +453,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.2s;
 }
 
-.bestteam__scroller_active {
+.scroller_active {
     background-color: #000;
 }
 

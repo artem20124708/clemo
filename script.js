@@ -26,41 +26,97 @@ document.querySelector('#scrollToClients').addEventListener('click', function() 
 // Bestteam slider
 
 let pushedChecker = 1
-let pushPx = -744
+let pushPx = -774
 let scrollerActive = 1
+let scrollerList = document.querySelectorAll('.bestteam__scroller')
+console.log(scrollerActive, pushedChecker)
+
+function pushFwd() {
+    pushPx -= 904
+    document.querySelector('#f_slide').style.left = `${pushPx}px`
+    document.querySelector('#s_slide').style.left = `${pushPx}px`
+    document.querySelector('#t_slide').style.left = `${pushPx}px`
+    pushedChecker += 1
+    document.querySelector('.p_l').classList.remove("pointer_blocked")
+    if (pushedChecker == 2) {
+        document.querySelector('.p_r').classList.add("pointer_blocked")
+    }
+}
+
+function pushBckwd() {
+    pushPx += 904
+    document.querySelector('#f_slide').style.left = `${pushPx}px`
+    document.querySelector('#s_slide').style.left = `${pushPx}px`
+    document.querySelector('#t_slide').style.left = `${pushPx}px`
+    pushedChecker -= 1
+    document.querySelector('.p_r').classList.remove("pointer_blocked")
+    if (pushedChecker == 0) {
+        document.querySelector('.p_l').classList.add("pointer_blocked")
+    }
+}
 
 document.querySelector('.p_r').addEventListener('click', function() {
     if (pushedChecker < 2) {
-        pushPx -= 744
-        document.querySelector('#f_slide').style.left = `${pushPx}px`
-        document.querySelector('#s_slide').style.left = `${pushPx}px`
-        document.querySelector('#t_slide').style.left = `${pushPx}px`
-        document.querySelectorAll('.bestteam__scroller')[scrollerActive].style.backgroundColor = 'transparent'
-        document.querySelectorAll('.bestteam__scroller')[scrollerActive + 1].style.backgroundColor = '#000'
+        pushFwd()
+        scrollerList[scrollerActive].classList.remove("scroller_active")
+        scrollerList[scrollerActive + 1].classList.add("scroller_active")
         scrollerActive += 1
-        pushedChecker += 1
-        document.querySelector('.p_l').style.borderColor = '#000'
-        if (pushedChecker == 2) {
-            document.querySelector('.p_r').style.borderColor = '#FFF'
-        }
     }
-    console.log(pushedChecker)
+    console.log(scrollerActive, pushedChecker)
 })
 
 document.querySelector('.p_l').addEventListener('click', function() {
     if (pushedChecker > 0) {
-        pushPx += 744
-        document.querySelector('#f_slide').style.left = `${pushPx}px`
-        document.querySelector('#s_slide').style.left = `${pushPx}px`
-        document.querySelector('#t_slide').style.left = `${pushPx}px`
-        document.querySelectorAll('.bestteam__scroller')[scrollerActive].style.backgroundColor = 'transparent'
-        document.querySelectorAll('.bestteam__scroller')[scrollerActive - 1].style.backgroundColor = '#000'
+        pushBckwd()
+        scrollerList[scrollerActive].classList.remove("scroller_active")
+        scrollerList[scrollerActive - 1].classList.add("scroller_active")
         scrollerActive -= 1
-        pushedChecker -= 1
-        document.querySelector('.p_r').style.borderColor = '#000'
-        if (pushedChecker == 0) {
-            document.querySelector('.p_l').style.borderColor = '#FFF'
-        }
     }
-    console.log(pushedChecker)
+    console.log(scrollerActive, pushedChecker)
+})
+
+function scrollerBckwd(count, pushedScroller, prevScroller) {
+    scrollerList[prevScroller].classList.remove("scroller_active")
+    pushedScroller.classList.add("scroller_active")
+
+    let i = 0
+    while (i < count) {
+        pushBckwd()
+        i++
+        scrollerActive -= 1
+    }
+    console.log(scrollerActive, pushedChecker)
+}
+
+function scrollerFwd(count, pushedScroller, prevScroller) {
+    scrollerList[prevScroller].classList.remove("scroller_active")
+    pushedScroller.classList.add("scroller_active")
+
+    let i = 2
+    while (count < i) {
+        pushFwd()
+        i--
+        scrollerActive += 1
+    }
+    console.log(scrollerActive, pushedChecker)
+}
+
+scrollerList[0].addEventListener('click', function() {
+    scrollerBckwd(pushedChecker, this, pushedChecker)
+})
+
+scrollerList[1].addEventListener('click', function() {
+    switch(pushedChecker) {
+        case 0:
+            scrollerFwd(1, this, 0)
+            break
+        case 1:
+            break
+        case 2:
+            scrollerBckwd(1, this, 2)
+    }
+})
+
+scrollerList[2].addEventListener('click', function() {
+    scrollerFwd(pushedChecker, this, pushedChecker)
 })
