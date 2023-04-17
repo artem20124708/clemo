@@ -29,7 +29,6 @@ let pushedChecker = 1
 let pushPx = -774
 let scrollerActive = 1
 let scrollerList = document.querySelectorAll('.bestteam__scroller')
-console.log(scrollerActive, pushedChecker)
 
 function pushFwd() {
     pushPx -= 904
@@ -62,7 +61,6 @@ document.querySelector('.p_r').addEventListener('click', function() {
         scrollerList[scrollerActive + 1].classList.add("scroller_active")
         scrollerActive += 1
     }
-    console.log(scrollerActive, pushedChecker)
 })
 
 document.querySelector('.p_l').addEventListener('click', function() {
@@ -72,7 +70,6 @@ document.querySelector('.p_l').addEventListener('click', function() {
         scrollerList[scrollerActive - 1].classList.add("scroller_active")
         scrollerActive -= 1
     }
-    console.log(scrollerActive, pushedChecker)
 })
 
 function scrollerBckwd(count, pushedScroller, prevScroller) {
@@ -85,7 +82,6 @@ function scrollerBckwd(count, pushedScroller, prevScroller) {
         i++
         scrollerActive -= 1
     }
-    console.log(scrollerActive, pushedChecker)
 }
 
 function scrollerFwd(count, pushedScroller, prevScroller) {
@@ -98,7 +94,6 @@ function scrollerFwd(count, pushedScroller, prevScroller) {
         i--
         scrollerActive += 1
     }
-    console.log(scrollerActive, pushedChecker)
 }
 
 scrollerList[0].addEventListener('click', function() {
@@ -120,3 +115,63 @@ scrollerList[1].addEventListener('click', function() {
 scrollerList[2].addEventListener('click', function() {
     scrollerFwd(pushedChecker, this, pushedChecker)
 })
+
+// Clients slider
+
+let clientCards = document.querySelectorAll('.client__photos__item')
+let clients = document.querySelectorAll('.clients__card')
+let clientPhotos = document.querySelectorAll('.client__photos__item')
+let clientScrollers = document.querySelectorAll('.clients__scroller')
+
+function photosToggle(eNum) {
+    document.querySelector('.card_shown').classList.remove("card_shown")
+    clients[eNum].classList.add("card_shown")
+    document.querySelector('.photos__item_focused').classList.remove("photos__item_focused")
+    clientPhotos[eNum].classList.add("photos__item_focused")
+    document.querySelector('.clients__scroller_active').classList.remove("clients__scroller_active")
+    clientScrollers[eNum].classList.add("clients__scroller_active")
+}
+
+function photosBind(eNum) {
+    clientCards[eNum].addEventListener('click', function() {
+        clientFrame = eNum
+        clearTimeout(scrollTimeout)
+        scrollDelay()
+        photosToggle(eNum)
+    })
+}
+
+function scrollersBind(eNum) {
+    clientScrollers[eNum].addEventListener('click', function() {
+        clientFrame = eNum
+        clearTimeout(scrollTimeout)
+        scrollDelay()
+        photosToggle(eNum)
+    })
+}
+
+for (i = 0; i < clientCards.length; i++) {
+    photosBind(i)
+    scrollersBind(i)
+}
+
+clientFrame = 0
+
+function clientScroll() {
+    if (clientFrame == clientCards.length) {
+        clientFrame = 0
+    }
+    photosToggle(clientFrame)
+    clientFrame++
+}
+
+let autoScroller = setInterval(clientScroll, 5000)
+let scrollTimeout = setTimeout(() => {
+}, 0);
+
+function scrollDelay() {
+    clearInterval(autoScroller)
+    scrollTimeout = setTimeout(() => {
+        autoScroller = setInterval(clientScroll, 5000)
+    }, 3000)
+}

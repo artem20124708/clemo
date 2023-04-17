@@ -408,6 +408,8 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 40%;
     
+    z-index: 100;
+
     transition: all .2s;
 }
 
@@ -476,6 +478,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clients {
+    position: relative;
+
     height: 445px;
     width: 100%;
     min-width: 900px;
@@ -484,14 +488,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clients__card {
-    display: none;
-}
-
-.card_active {
     display: flex;
+    position: absolute;
     justify-content: end;
     
     margin: 0 auto;
+
+    opacity: 0;
+
+    transition: all .75s;
+}
+
+.card_shown {
+    opacity: 1;
 }
 
 .clients__preview {
@@ -530,7 +539,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clients__photos {
-    margin-top: 75px;
+    margin-top: 195px;
     
     display: flex;
     justify-content: space-around;
@@ -538,8 +547,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .client__photos__item {
     cursor: pointer;
-    
+    filter: brightness(85%);
+
     transition: all .3s;
+}
+
+.photos__item_focused {
+    transform: scale(1.05);
+
+    filter: none;
 }
 
 .client__photos__item:hover {
@@ -655,10 +671,6 @@ footer {
     margin-left: 20px;
 
     transition: all .2s;
-}
-
-.contacts__socialMedia_item:hover {
-    transform: scale(1.125);
 }
 
 .contacts__socialMedia_item:first-child {
