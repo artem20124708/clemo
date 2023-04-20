@@ -148,6 +148,14 @@ function scrollersBind(eNum) {
         scrollDelay()
         photosToggle(eNum)
     })
+
+    clientScrollers[eNum].addEventListener('mouseover', function() {
+        clientFrame = eNum
+        clearTimeout(scrollTimeout)
+        scrollDelay()
+        photosToggle(eNum)
+        overChecker = true;
+    })
 }
 
 for (i = 0; i < clientCards.length; i++) {
@@ -175,3 +183,13 @@ function scrollDelay() {
         autoScroller = setInterval(clientScroll, 5000)
     }, 3000)
 }
+
+// Footer year
+
+let date = new Date()
+
+let copyrightHeader = document.querySelector('.footer__copyright_header')
+
+copyrightHeader.innerHTML = `&#169 ${date.getFullYear()} clemo.`
+
+console.log(date.getFullYear())
