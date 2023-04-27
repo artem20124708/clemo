@@ -6,21 +6,40 @@ function introScroller(focusedScroller, scrollElem) {
     scrollElem.scrollIntoView({behavior: "smooth"})
 }
 
-document.querySelector('#scrollToIntro').addEventListener('click', function() {
+document.querySelector('.scrollToIntro').addEventListener('click', function() {
     introScroller(this, document.querySelector('.intro'))
 })
 
-document.querySelector('#scrollToWwedo').addEventListener('click', function() {
+document.querySelector('.scrollToWwedo').addEventListener('click', function() {
     introScroller(this, document.querySelector('.wwedo__title'))
 })
-document.querySelector('#scrollToBestwork').addEventListener('click', function() {
+document.querySelector('.scrollToBestwork').addEventListener('click', function() {
     introScroller(this, document.querySelector('.bestwork__title'))
 })
-document.querySelector('#scrollToBestteam').addEventListener('click', function() {
-    introScroller(this,document.querySelector('.bestteam'))
+document.querySelector('.scrollToBestteam').addEventListener('click', function() {
+    introScroller(this, document.querySelector('.bestteam'))
 })
-document.querySelector('#scrollToClients').addEventListener('click', function() {
+document.querySelector('.scrollToClients').addEventListener('click', function() {
     introScroller(this, document.querySelector('#clientsSay'))
+})
+
+// Intro scrollers dynamic
+
+let intro = document.querySelector('.intro')
+let footer = document.querySelector('footer')
+
+let introHeight = intro.offsetHeight
+let footerHeight = footer.offsetHeight
+let fullHeight = document.querySelector('body').offsetHeight
+
+let scrollers = document.querySelector('.scrollers')
+
+window.addEventListener('scroll', function() {
+    if ((this.window.pageYOffset <= introHeight || this.window.pageYOffset >= (fullHeight - footerHeight) - this.window.innerHeight + 200)) {
+        scrollers.classList.remove("fixed")
+    } else {
+        scrollers.classList.add("fixed")
+    }
 })
 
 // Bestteam slider
@@ -191,5 +210,3 @@ let date = new Date()
 let copyrightHeader = document.querySelector('.footer__copyright_header')
 
 copyrightHeader.innerHTML = `&#169 ${date.getFullYear()} clemo.`
-
-console.log(date.getFullYear())

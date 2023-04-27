@@ -114,6 +114,14 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(0, -50%);
 }
 
+.scrollers.fixed {
+    position: fixed;
+    left: 95%;
+    top: 50%;
+
+    z-index: 200;
+}
+
 .scroller {
     cursor: pointer;
     
