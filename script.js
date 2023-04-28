@@ -6,6 +6,11 @@ function introScroller(focusedScroller, scrollElem) {
     scrollElem.scrollIntoView({behavior: "smooth"})
 }
 
+function fixedScroller(focusedScroller) {
+    document.querySelector('.scroller_active').classList.remove("scroller_active")
+    focusedScroller.classList.add("scroller_active")
+}
+
 document.querySelector('.scrollToIntro').addEventListener('click', function() {
     introScroller(this, document.querySelector('.intro'))
 })
@@ -34,13 +39,35 @@ let fullHeight = document.querySelector('body').offsetHeight
 
 let scrollers = document.querySelector('.scrollers')
 
+
+
 window.addEventListener('scroll', function() {
-    if ((this.window.pageYOffset <= introHeight || this.window.pageYOffset >= (fullHeight - footerHeight) - this.window.innerHeight + 200)) {
+    if ((this.window.pageYOffset <= introHeight || this.window.pageYOffset >= (fullHeight - footerHeight) - this.window.innerHeight + 520)) {
         scrollers.classList.remove("fixed")
     } else {
         scrollers.classList.add("fixed")
     }
+    switch(true) {
+        case  (this.window.pageYOffset <= introHeight):
+            fixedScroller(document.querySelector('.scrollToIntro'))
+            break
+        case (this.window.pageYOffset <= (introHeight + 2030)):
+            fixedScroller(document.querySelector('.scrollToWwedo'))
+            break
+        case (this.window.pageYOffset <= (introHeight + 3360)):
+            fixedScroller(document.querySelector('.scrollToBestwork'))
+            break
+        case (this.window.pageYOffset <= (introHeight + 4000)):
+            fixedScroller(document.querySelector('.scrollToBestteam'))
+            break
+        case (this.window.pageYOffset <= (introHeight + 4610)):
+            fixedScroller(document.querySelector('.scrollToClients'))
+            break
+            
+    }
+    console.log(this.window.pageYOffset)
 })
+console.log(introHeight + 2030)
 
 // Bestteam slider
 
