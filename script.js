@@ -39,16 +39,14 @@ let fullHeight = document.querySelector('body').offsetHeight
 
 let scrollers = document.querySelector('.scrollers')
 
-
-
 window.addEventListener('scroll', function() {
-    if ((this.window.pageYOffset <= introHeight || this.window.pageYOffset >= (fullHeight - footerHeight) - this.window.innerHeight + 520)) {
+    if (this.window.pageYOffset < (introHeight - 20)) {
         scrollers.classList.remove("fixed")
     } else {
         scrollers.classList.add("fixed")
     }
     switch(true) {
-        case  (this.window.pageYOffset <= introHeight):
+        case  (this.window.pageYOffset < (introHeight - 20)):
             fixedScroller(document.querySelector('.scrollToIntro'))
             break
         case (this.window.pageYOffset <= (introHeight + 2030)):
@@ -65,9 +63,7 @@ window.addEventListener('scroll', function() {
             break
             
     }
-    console.log(this.window.pageYOffset)
 })
-console.log(introHeight + 2030)
 
 // Bestteam slider
 
@@ -237,3 +233,44 @@ let date = new Date()
 let copyrightHeader = document.querySelector('.footer__copyright_header')
 
 copyrightHeader.innerHTML = `&#169 ${date.getFullYear()} clemo.`
+
+// Footer input
+
+let subButton = document.querySelector('.feedback__button')
+let inpName = document.querySelector('#name')
+let inpEmail = document.querySelector('#email')
+let inpMessage = document.querySelector('#message')
+
+let name,
+    email,
+    message;
+
+subButton.addEventListener('click', function() {
+    name = inpName.value
+    email = inpEmail.value
+    message = inpMessage.value
+    
+    let emailValidate = email.length >= 6
+                 && email.includes('@')
+                 && email.includes('.'); 
+    
+    if (name === '') {
+        alert('Enter your name.')
+    } else if (email === '') {
+        alert('Enter your email.')
+    } else if (!emailValidate) {
+        alert('Enter valid email.') 
+    } else if (message === '') {
+        alert('Enter your message.')
+    }  else {
+        console.log(name)
+        console.log(email)
+        console.log(message)
+        
+        inpName.value = ''
+        inpEmail.value = ''
+        inpMessage.value = ''
+        
+        alert('Thanks for feedback!')
+    }
+})

@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     color: #000;
 
-    min-width: 900px;
+    min-width: 1150px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -250,8 +250,8 @@ h1, h2, h3, h4, h5, h6 {
     display: table-cell;
     column-count: 3;
     
-    width: 100vw;
-    max-width: 1150px;
+    width: 100%;
+    min-width: 1142px;
     height: 1018px;
     padding-top: 75px;
 }
@@ -265,11 +265,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bestwork__img {
-    margin-right: 2vw;
-    margin-bottom: 2vw;
-
-    width: 30.29vw;
-    
+    margin-right: 25px;
+    margin-bottom: 25px;
     
     transition: all .5s ;
 }
@@ -318,7 +315,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .bestteam {
     margin-top: 60px;
-    width: 100vw;
+    min-width: 1150px;
+    width: 100%;
 }
 
 #bestteam__container {
@@ -559,8 +557,6 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     filter: brightness(85%);
 
-    width: 23vw;
-
     transition: all .3s;
 }
 
@@ -767,6 +763,8 @@ input:not(:placeholder-shown) ~ label {
 }
 
 .feedback__button_text {
+    cursor: pointer;
+    
     line-height: 48px;
     text-align: center;
     font-size: 18px;
